@@ -3,18 +3,14 @@ package com.tapan.springlearn.SpringSkill;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-record Person(String name, int age) {
-
-};
-
-record Person2(String name, int age, String suitcolor) {
-};
-
-record Addresss(String streetName, int ZipCode, String State) {
-};
-
 @Configuration
 public class HelloWorldConfiguration {
+
+	record Person(String name, int age, Address address) {
+	};
+
+	record Address(String firstLane, String City) {
+	};
 
 	@Bean
 	public String name() {
@@ -23,25 +19,32 @@ public class HelloWorldConfiguration {
 
 	@Bean
 	public int age() {
-		return 15;
+		return 25;
 	}
 
 	@Bean
 	public Person person() {
-		var person = new Person("Batman", 21);
-		return person;
+		return new Person("Tapan behera", 19, new Address("Naveen Niwas", "Bhubaneshwar"));
 	}
 
 	@Bean
-	public Person2 person2() {
-		var person = new Person2("SpiderMan", 19, "Red&Blue");
-		return person;
+	public Person person2MethodCalls() {
+		return new Person(name(), age(), address());
 	}
 
 	@Bean
-	public Addresss address() {
-		var address = new Addresss("Raisena Hills", 0001, "Delhi");
-		return address;
+	public Person person3Parameter(String name, int age, Address address3) {
+		return new Person(name, age, address3);
+	}
+
+	@Bean(name = "address2")
+	public Address address() {
+		return new Address("Marathalli", "Banglore");
+	}
+
+	@Bean(name = "address3")
+	public Address address3() {
+		return new Address("Arei,BinjharPur", "Jajpur");
 	}
 
 }
