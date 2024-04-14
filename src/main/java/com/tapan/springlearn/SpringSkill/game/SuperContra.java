@@ -1,5 +1,8 @@
 package com.tapan.springlearn.SpringSkill.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class SuperContra implements GamingConsole {
 	@Override
 	public void up() {

@@ -1,5 +1,10 @@
 package com.tapan.springlearn.SpringSkill.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+@Qualifier("PacmanQualifier")
 public class PacMan implements GamingConsole {
 
 	@Override
