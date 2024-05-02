@@ -1,8 +1,9 @@
 package com.tapan.springlearn.SpringSkill.example1.depInj.c1;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+//@Component
+@Repository
 public class MySqlDataService implements DataService {
 
 	@Override

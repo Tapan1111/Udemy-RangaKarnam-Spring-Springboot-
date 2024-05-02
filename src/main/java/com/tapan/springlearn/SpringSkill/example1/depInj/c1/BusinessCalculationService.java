@@ -2,9 +2,10 @@ package com.tapan.springlearn.SpringSkill.example1.depInj.c1;
 
 import java.util.Arrays;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+//@Component
+@Service
 public class BusinessCalculationService {
 	private DataService dataService;
 
